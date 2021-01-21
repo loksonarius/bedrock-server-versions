@@ -9,4 +9,4 @@ jobs:
       - uses: actions/checkout@v2
         with:
           fetch-depth: 0
-      - run: "cat versions.json | jq"
+      - run: jq '.' versions.json

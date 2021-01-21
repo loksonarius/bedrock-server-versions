@@ -2,7 +2,7 @@
 name: prepublish-version
 on:
   schedule:
-    cron: '30 8 * * 6'
+    - cron: '30 8 * * 6'
 
 jobs:
   submit-update-pr:
