@@ -56,7 +56,7 @@ func scrapeGamepediaVersions() ([]string, error) {
 		}
 	}
 
-	urlRe := regexp.MustCompile(`^\/Bedrock_Edition_(?P<version>\d+\.\d+\.\d+(\.\d+)?)$`)
+	urlRe := regexp.MustCompile(`\/Bedrock_Edition_(?P<version>\d+\.\d+\.\d+(\.\d+)?)$`)
 	var versionUrls []string
 	var crawlForVersionUrls func(n *html.Node)
 	crawlForVersionUrls = func(n *html.Node) {
