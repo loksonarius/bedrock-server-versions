@@ -1,7 +1,7 @@
 ---
 name: run-version-check
 on:
-  workflow_dispatch:
+  workflow_dispatch: {}
   schedule:
     - cron: '30 8 * * 6'
 
