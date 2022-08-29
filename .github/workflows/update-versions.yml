@@ -19,6 +19,8 @@ jobs:
           echo "Scrapping new versions"
           go run main.go > versions.json
       - uses: peter-evans/create-pull-request@v3
+        env:
+          GITHUB_TOKEN: ${{ secrets.REPO_SCOPED_TOKEN }}
         with:
           commit-message: Update versions
           title: Update versions
