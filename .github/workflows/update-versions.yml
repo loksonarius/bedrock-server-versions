@@ -9,8 +9,9 @@ jobs:
   submit-update-pr:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
         with:
+          ssh-key: ${{ secrets.DEPLOY_KEY }}
           fetch-depth: 0
       - uses: actions/setup-go@v2
         with:
@@ -19,6 +20,8 @@ jobs:
           echo "Scrapping new versions"
           go run main.go > versions.json
       - uses: peter-evans/create-pull-request@v3
+        # env:
+        #   GITHUB_TOKEN: ${{ secrets.REPO_SCOPED_TOKEN }}
         with:
           commit-message: Update versions
           title: Update versions
